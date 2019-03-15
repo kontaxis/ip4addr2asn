@@ -7,4 +7,4 @@ db.sqlite3:
 	python makedb.py
 
 clean:
-	rm -i thyme_apnic_net* ip4net2asn.txt asn2name.txt db.sqlite3
+	rm -i thyme_apnic_net_* ip4net2asn.txt asn2name.txt db.sqlite3

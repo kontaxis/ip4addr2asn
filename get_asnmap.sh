@@ -2,16 +2,24 @@
 
 # http://thyme.apnic.net/
 
+# Vantage point.
+#
+# Options:
+# - "current" (jp)
+# - "au"
+# - "london"
+# - "singapore"
+# - "hk"
+# - "guam"
+#
+vp="london"
+
 tstamp=$(date +%Y%m%d);
 
-# Also current (jp), au, hk, london
-curl -L "http://thyme.apnic.net/us/data-raw-table" \
-	-o "thyme_apnic_net_us_net2asn_${tstamp}.txt" && \
-rm -f ip4net2asn.txt && \
-ln -s "thyme_apnic_net_us_net2asn_${tstamp}.txt" ip4net2asn.txt
+curl -L "http://thyme.apnic.net/${vp}/data-raw-table" \
+	-o "thyme_apnic_net_${vp}_net2asn_${tstamp}.txt" && \
+ln -f -s "thyme_apnic_net_${vp}_net2asn_${tstamp}.txt" ip4net2asn.txt
 
-# Also current (jp), au, hk, london
-curl -L "http://thyme.apnic.net/hk/data-used-autnums" \
-	-o "thyme_apnic_net_us_asn2name_${tstamp}.txt" && \
-rm -f asn2name.txt && \
-ln -s "thyme_apnic_net_us_asn2name_${tstamp}.txt" asn2name.txt
+curl -L "http://thyme.apnic.net/${vp}/data-used-autnums" \
+	-o "thyme_apnic_net_${vp}_asn2name_${tstamp}.txt" && \
+ln -f -s "thyme_apnic_net_${vp}_asn2name_${tstamp}.txt" asn2name.txt
