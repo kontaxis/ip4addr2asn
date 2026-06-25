@@ -12,7 +12,7 @@
 # - "hk"
 # - "guam"
 #
-vp="london"
+vp="current"
 
 tstamp=$(date +%Y%m%d);
 

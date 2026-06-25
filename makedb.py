@@ -13,7 +13,7 @@ dirname = os.path.dirname(sys.argv[0])
 ip4net2asn = []
 
 # e.g., http://thyme.apnic.net/us/data-raw-table
-f = file(os.path.join(dirname, "ip4net2asn.txt"), "r")
+f = open(os.path.join(dirname, "ip4net2asn.txt"), "r")
 
 for line in f:
 	[ip4net, asn] = line.split("\t")
@@ -26,7 +26,7 @@ f.close()
 asn2name = []
 
 # e.g., http://thyme.apnic.net/hk/data-used-autnums
-f = file(os.path.join(dirname, "asn2name.txt"), "r")
+f = open(os.path.join(dirname, "asn2name.txt"), "r")
 
 for line in f:
 	asn = line[0:6].strip(" ")
